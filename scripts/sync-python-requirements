@@ -4,11 +4,11 @@ tmp=$(mktemp -d)
 cd $tmp
 
 requirements=(
-    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v3.5-branch/scripts/requirements-base.txt
-    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v3.5-branch/scripts/requirements-build-test.txt
-    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v3.5-branch/scripts/requirements-run-test.txt
-    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v3.5-branch/scripts/requirements-extras.txt
-    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v3.5-branch/scripts/requirements-compliance.txt
+    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.0-branch/scripts/requirements-base.txt
+    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.0-branch/scripts/requirements-build-test.txt
+    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.0-branch/scripts/requirements-run-test.txt
+    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.0-branch/scripts/requirements-extras.txt
+    https://raw.githubusercontent.com/zephyrproject-rtos/zephyr/v4.0-branch/scripts/requirements-compliance.txt
 )
 for url in "${requirements[@]}"; do
     wget -q $url
