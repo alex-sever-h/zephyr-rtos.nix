@@ -1,7 +1,7 @@
 {
   description = "Zephyr Project - Development Environment";
 
-  inputs.nixpkgs.url = "nixpkgs/release-23.11";
+  inputs.nixpkgs.url = "nixpkgs/release-24.05";
 
   outputs = { self, nixpkgs, ... }:
     let
