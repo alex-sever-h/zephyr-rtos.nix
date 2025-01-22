@@ -1,6 +1,6 @@
-{ stdenv, lib, hostPlatform, fetchurl, autoPatchelfHook, makeBinaryWrapper, xz, python38, which
-, hidapi, libftdi1, libusb1, overrideOpenocd, cmake, wget, file
-, version ? "0.16.5", toolchains ? "all" }:
+{ stdenv, lib, hostPlatform, fetchurl, autoPatchelfHook, makeBinaryWrapper, xz, python38, python310, which
+, hidapi, ncurses, libxcrypt-legacy, libftdi1, libusb1, overrideOpenocd, cmake, wget, file
+, version ? "0.17.0", toolchains ? "all" }:
 
 let pname = "zephyr-sdk";
     system = lib.splitString "-" hostPlatform.system;
@@ -28,7 +28,7 @@ in stdenv.mkDerivation {
   sourceRoot = "${pname}-${version}";
 
   nativeBuildInputs = [ autoPatchelfHook makeBinaryWrapper which file cmake wget ];
-  buildInputs = [ xz python38 hidapi libftdi1 libusb1 ];
+  buildInputs = [ xz python38 python310 ncurses hidapi libftdi1 libusb1 libxcrypt-legacy];
 
   postUnpack = ''
     mv ${lib.concatStringsSep " " install-toolchains} $sourceRoot
