@@ -57,7 +57,7 @@ pkgs.gccMultiStdenv.mkDerivation ({
   phases = [ ];
 
   buildInputs = with pkgs; [
-    git
+    gitFull
     cmake
     ninja
     gnumake
